@@ -1,8 +1,8 @@
 {
   "id": "4bd7786f-cb6e-484f-a248-d2a18ac2d009",
   "revision": 0,
-  "last_node_id": 22,
-  "last_link_id": 22,
+  "last_node_id": 27,
+  "last_link_id": 31,
   "nodes": [
     {
       "id": 6,
@@ -16,7 +16,7 @@
         26
       ],
       "flags": {},
-      "order": 13,
+      "order": 14,
       "mode": 0,
       "inputs": [
         {
@@ -53,7 +53,7 @@
         246
       ],
       "flags": {},
-      "order": 15,
+      "order": 17,
       "mode": 0,
       "inputs": [
         {
@@ -98,84 +98,6 @@
       "widgets_values": []
     },
     {
-      "id": 13,
-      "type": "EmptyLatentImage",
-      "pos": [
-        -444.5356140136719,
-        612.7947387695312
-      ],
-      "size": [
-        270,
-        106
-      ],
-      "flags": {},
-      "order": 0,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "label": "Latent",
-          "name": "LATENT",
-          "type": "LATENT",
-          "links": [
-            9
-          ]
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "EmptyLatentImage"
-      },
-      "widgets_values": [
-        512,
-        512,
-        1
-      ]
-    },
-    {
-      "id": 8,
-      "type": "CheckpointLoaderSimple",
-      "pos": [
-        -527.2867431640625,
-        157.71278381347656
-      ],
-      "size": [
-        270,
-        98
-      ],
-      "flags": {},
-      "order": 1,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "label": "模型",
-          "name": "MODEL",
-          "type": "MODEL",
-          "links": [
-            6
-          ]
-        },
-        {
-          "label": "CLIP",
-          "name": "CLIP",
-          "type": "CLIP",
-          "links": null
-        },
-        {
-          "label": "VAE",
-          "name": "VAE",
-          "type": "VAE",
-          "links": null
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "CheckpointLoaderSimple"
-      },
-      "widgets_values": [
-        "FLUX\\FLUX_幻谷_极致优秀的2.5d大模型_V2.safetensors"
-      ]
-    },
-    {
       "id": 14,
       "type": "VAEDecode",
       "pos": [
@@ -187,7 +109,7 @@
         46
       ],
       "flags": {},
-      "order": 14,
+      "order": 18,
       "mode": 0,
       "inputs": [
         {
@@ -219,37 +141,6 @@
       "widgets_values": []
     },
     {
-      "id": 15,
-      "type": "VAELoader",
-      "pos": [
-        169.7305908203125,
-        477.8118591308594
-      ],
-      "size": [
-        270,
-        58
-      ],
-      "flags": {},
-      "order": 2,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "VAE",
-          "type": "VAE",
-          "links": [
-            11
-          ]
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "VAELoader"
-      },
-      "widgets_values": [
-        "ae.sft"
-      ]
-    },
-    {
       "id": 11,
       "type": "DualCLIPLoader",
       "pos": [
@@ -261,7 +152,7 @@
         130
       ],
       "flags": {},
-      "order": 3,
+      "order": 0,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -285,6 +176,285 @@
       ]
     },
     {
+      "id": 1,
+      "type": "SPOUT WRITER (JOV_SPOUT)",
+      "pos": [
+        597.7999877929688,
+        441
+      ],
+      "size": [
+        303.6861267089844,
+        82
+      ],
+      "flags": {},
+      "order": 19,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "image",
+          "name": "image",
+          "type": "IMAGE,MASK",
+          "link": 12
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "SPOUT WRITER (JOV_SPOUT)"
+      },
+      "widgets_values": [
+        "Comfy Spout Sender",
+        30
+      ]
+    },
+    {
+      "id": 22,
+      "type": "CR Integer To String",
+      "pos": [
+        -491.19500732421875,
+        30.733684539794922
+      ],
+      "size": [
+        140,
+        46
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "int_",
+          "type": "INT",
+          "link": 22
+        }
+      ],
+      "outputs": [
+        {
+          "label": "字符串",
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            21
+          ]
+        },
+        {
+          "name": "show_help",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CR Integer To String"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 20,
+      "type": "PrimitiveInt",
+      "pos": [
+        -923.7334594726562,
+        215.3702392578125
+      ],
+      "size": [
+        270,
+        82
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "label": "INT",
+          "name": "INT",
+          "type": "INT",
+          "links": [
+            22
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PrimitiveInt"
+      },
+      "widgets_values": [
+        -660676418508127,
+        "fixed"
+      ]
+    },
+    {
+      "id": 15,
+      "type": "VAELoader",
+      "pos": [
+        169.7305908203125,
+        477.8118591308594
+      ],
+      "size": [
+        270,
+        58
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            11,
+            24
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAELoader"
+      },
+      "widgets_values": [
+        "ae.sft"
+      ]
+    },
+    {
+      "id": 23,
+      "type": "VAEEncode",
+      "pos": [
+        -380.62896728515625,
+        673.7285766601562
+      ],
+      "size": [
+        140,
+        46
+      ],
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "图像",
+          "name": "pixels",
+          "type": "IMAGE",
+          "link": 23
+        },
+        {
+          "label": "VAE",
+          "name": "vae",
+          "type": "VAE",
+          "link": 24
+        }
+      ],
+      "outputs": [
+        {
+          "label": "Latent",
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            25
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEEncode"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 8,
+      "type": "CheckpointLoaderSimple",
+      "pos": [
+        -527.2867431640625,
+        157.71278381347656
+      ],
+      "size": [
+        270,
+        98
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "label": "模型",
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            26
+          ]
+        },
+        {
+          "label": "CLIP",
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            28
+          ]
+        },
+        {
+          "label": "VAE",
+          "name": "VAE",
+          "type": "VAE",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CheckpointLoaderSimple"
+      },
+      "widgets_values": [
+        "FLUX\\FLUX_幻谷_极致优秀的2.5d大模型_V2.safetensors"
+      ]
+    },
+    {
+      "id": 24,
+      "type": "LoraLoader",
+      "pos": [
+        -195.45916748046875,
+        -78.55308532714844
+      ],
+      "size": [
+        270,
+        126
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "模型",
+          "name": "model",
+          "type": "MODEL",
+          "link": 26
+        },
+        {
+          "label": "CLIP",
+          "name": "clip",
+          "type": "CLIP",
+          "link": 28
+        }
+      ],
+      "outputs": [
+        {
+          "label": "模型",
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            27
+          ]
+        },
+        {
+          "label": "CLIP",
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoraLoader"
+      },
+      "widgets_values": [
+        "F!.D\\墨幽-Flux-Lora-白丝_MYH-1.1.safetensors",
+        0.6000000000000001,
+        1
+      ]
+    },
+    {
       "id": 12,
       "type": "CLIPTextEncode",
       "pos": [
@@ -296,7 +466,7 @@
         200
       ],
       "flags": {},
-      "order": 7,
+      "order": 6,
       "mode": 0,
       "inputs": [
         {
@@ -320,7 +490,7 @@
         "Node name for S&R": "CLIPTextEncode"
       },
       "widgets_values": [
-        "1 CAT smiling",
+        "1 cute girl with long pink hair wearing blue dress, white_pantyhose, walking on a beach, ",
         [
           false,
           true
@@ -328,65 +498,36 @@
       ]
     },
     {
-      "id": 3,
-      "type": "SPOUT READER (JOV_SPOUT)",
+      "id": 16,
+      "type": "PrimitiveInt",
       "pos": [
-        68.30838775634766,
-        871.5750732421875
+        -698.5858154296875,
+        880.7538452148438
       ],
       "size": [
-        306.8169860839844,
-        242
+        270,
+        82
       ],
       "flags": {},
-      "order": 10,
+      "order": 4,
       "mode": 0,
-      "inputs": [
-        {
-          "label": "height",
-          "name": "height",
-          "type": "INT",
-          "widget": {
-            "name": "height"
-          },
-          "link": 19
-        }
-      ],
+      "inputs": [],
       "outputs": [
         {
-          "label": "RGBA",
-          "name": "RGBA",
-          "type": "IMAGE",
-          "links": []
-        },
-        {
-          "label": "RGB",
-          "name": "RGB",
-          "type": "IMAGE",
+          "label": "INT",
+          "name": "INT",
+          "type": "INT",
           "links": [
-            3
-          ]
-        },
-        {
-          "label": "MASK",
-          "name": "MASK",
-          "type": "MASK",
-          "links": [
-            4
+            15
           ]
         }
       ],
       "properties": {
-        "Node name for S&R": "SPOUT READER (JOV_SPOUT)"
+        "Node name for S&R": "PrimitiveInt"
       },
       "widgets_values": [
-        "TDSyphonSpoutOut",
-        1024,
-        768,
-        30,
-        "NEAREST",
-        1,
-        2
+        1036,
+        "increment"
       ]
     },
     {
@@ -401,7 +542,7 @@
         82
       ],
       "flags": {},
-      "order": 4,
+      "order": 5,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -418,90 +559,8 @@
         "Node name for S&R": "PrimitiveInt"
       },
       "widgets_values": [
-        79,
+        12,
         "increment"
-      ]
-    },
-    {
-      "id": 18,
-      "type": "easy mathInt",
-      "pos": [
-        -302.41790771484375,
-        851.9664916992188
-      ],
-      "size": [
-        270,
-        106
-      ],
-      "flags": {},
-      "order": 8,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "a",
-          "type": "INT",
-          "widget": {
-            "name": "a"
-          },
-          "link": 15
-        },
-        {
-          "name": "b",
-          "type": "INT",
-          "widget": {
-            "name": "b"
-          },
-          "link": 18
-        }
-      ],
-      "outputs": [
-        {
-          "label": "整数",
-          "name": "INT",
-          "type": "INT",
-          "links": [
-            19
-          ]
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "easy mathInt"
-      },
-      "widgets_values": [
-        0,
-        1,
-        "add"
-      ]
-    },
-    {
-      "id": 1,
-      "type": "SPOUT WRITER (JOV_SPOUT)",
-      "pos": [
-        597.7999877929688,
-        441
-      ],
-      "size": [
-        303.6861267089844,
-        82
-      ],
-      "flags": {},
-      "order": 16,
-      "mode": 0,
-      "inputs": [
-        {
-          "label": "image",
-          "name": "image",
-          "type": "IMAGE,MASK",
-          "link": 12
-        }
-      ],
-      "outputs": [],
-      "properties": {
-        "Node name for S&R": "SPOUT WRITER (JOV_SPOUT)"
-      },
-      "widgets_values": [
-        "Comfy Spout Sender",
-        30
       ]
     },
     {
@@ -516,14 +575,14 @@
         286
       ],
       "flags": {},
-      "order": 11,
+      "order": 16,
       "mode": 0,
       "inputs": [
         {
           "label": "model",
           "name": "model",
           "type": "MODEL",
-          "link": 6
+          "link": 27
         },
         {
           "label": "conditioning",
@@ -535,7 +594,7 @@
           "label": "latent_image",
           "name": "latent_image",
           "type": "LATENT",
-          "link": 9
+          "link": 25
         },
         {
           "label": "loras",
@@ -581,28 +640,82 @@
         "3.5",
         "",
         "",
-        "1.0"
+        "0.95"
       ]
     },
     {
-      "id": 22,
-      "type": "CR Integer To String",
+      "id": 18,
+      "type": "easy mathInt",
       "pos": [
-        -491.19500732421875,
-        30.733684539794922
+        -302.41790771484375,
+        851.9664916992188
       ],
       "size": [
-        140,
-        46
+        270,
+        106
       ],
       "flags": {},
       "order": 9,
       "mode": 0,
       "inputs": [
         {
+          "label": "a",
+          "name": "a",
+          "type": "INT",
+          "widget": {
+            "name": "a"
+          },
+          "link": 15
+        },
+        {
+          "label": "b",
+          "name": "b",
+          "type": "INT",
+          "widget": {
+            "name": "b"
+          },
+          "link": 18
+        }
+      ],
+      "outputs": [
+        {
+          "label": "整数",
+          "name": "INT",
+          "type": "INT",
+          "links": [
+            19,
+            29
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "easy mathInt"
+      },
+      "widgets_values": [
+        0,
+        1,
+        "subtract"
+      ]
+    },
+    {
+      "id": 25,
+      "type": "CR Integer To String",
+      "pos": [
+        -290.3452453613281,
+        1000.4847412109375
+      ],
+      "size": [
+        140,
+        46
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
           "name": "int_",
           "type": "INT",
-          "link": 22
+          "link": 29
         }
       ],
       "outputs": [
@@ -611,7 +724,7 @@
           "name": "STRING",
           "type": "STRING",
           "links": [
-            21
+            31
           ]
         },
         {
@@ -622,72 +735,105 @@
       ],
       "properties": {
         "Node name for S&R": "CR Integer To String"
-      }
+      },
+      "widgets_values": []
     },
     {
-      "id": 16,
-      "type": "PrimitiveInt",
+      "id": 27,
+      "type": "ShowText|pysssss",
       "pos": [
-        -698.5858154296875,
-        880.7538452148438
+        -280.8907470703125,
+        1098.6798095703125
       ],
       "size": [
-        270,
-        82
+        140,
+        76
       ],
       "flags": {},
-      "order": 5,
+      "order": 15,
       "mode": 0,
-      "inputs": [],
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 31
+        }
+      ],
       "outputs": [
         {
-          "label": "INT",
-          "name": "INT",
+          "label": "字符串",
+          "name": "STRING",
+          "shape": 6,
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 3,
+      "type": "SPOUT READER (JOV_SPOUT)",
+      "pos": [
+        68.30838775634766,
+        871.5750732421875
+      ],
+      "size": [
+        306.8169860839844,
+        242
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "height",
+          "name": "height",
           "type": "INT",
+          "widget": {
+            "name": "height"
+          },
+          "link": 19
+        }
+      ],
+      "outputs": [
+        {
+          "label": "RGBA",
+          "name": "RGBA",
+          "type": "IMAGE",
+          "links": []
+        },
+        {
+          "label": "RGB",
+          "name": "RGB",
+          "type": "IMAGE",
           "links": [
-            15
+            3,
+            23
+          ]
+        },
+        {
+          "label": "MASK",
+          "name": "MASK",
+          "type": "MASK",
+          "links": [
+            4
           ]
         }
       ],
       "properties": {
-        "Node name for S&R": "PrimitiveInt"
+        "Node name for S&R": "SPOUT READER (JOV_SPOUT)"
       },
       "widgets_values": [
-        847,
-        "increment"
-      ]
-    },
-    {
-      "id": 20,
-      "type": "PrimitiveInt",
-      "pos": [
-        -923.7334594726562,
-        215.3702392578125
-      ],
-      "size": [
-        270,
-        82
-      ],
-      "flags": {},
-      "order": 6,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "label": "INT",
-          "name": "INT",
-          "type": "INT",
-          "links": [
-            22
-          ]
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "PrimitiveInt"
-      },
-      "widgets_values": [
-        -660676418508127,
-        "fixed"
+        "TDSyphonSpoutOut",
+        768,
+        768,
+        30,
+        "NEAREST",
+        1,
+        2
       ]
     }
   ],
@@ -717,14 +863,6 @@
       "IMAGE"
     ],
     [
-      6,
-      8,
-      0,
-      10,
-      0,
-      "MODEL"
-    ],
-    [
       7,
       11,
       0,
@@ -739,14 +877,6 @@
       10,
       1,
       "CONDITIONING"
-    ],
-    [
-      9,
-      13,
-      0,
-      10,
-      2,
-      "LATENT"
     ],
     [
       10,
@@ -811,6 +941,70 @@
       22,
       0,
       "INT"
+    ],
+    [
+      23,
+      3,
+      1,
+      23,
+      0,
+      "IMAGE"
+    ],
+    [
+      24,
+      15,
+      0,
+      23,
+      1,
+      "VAE"
+    ],
+    [
+      25,
+      23,
+      0,
+      10,
+      2,
+      "LATENT"
+    ],
+    [
+      26,
+      8,
+      0,
+      24,
+      0,
+      "MODEL"
+    ],
+    [
+      27,
+      24,
+      0,
+      10,
+      0,
+      "MODEL"
+    ],
+    [
+      28,
+      8,
+      1,
+      24,
+      1,
+      "CLIP"
+    ],
+    [
+      29,
+      18,
+      0,
+      25,
+      0,
+      "INT"
+    ],
+    [
+      31,
+      25,
+      0,
+      27,
+      0,
+      "STRING"
     ]
   ],
   "groups": [
@@ -834,9 +1028,10 @@
     "node_versions": {
       "comfy-core": "0.3.33",
       "jovi_spout": "70135673bf64b2a7678a2520c2fdd637adb03deb",
-      "ComfyUI-Easy-Use": "aadbb0b38945eba3e15be6099a7f4e5c0327c175",
+      "ComfyUI_Comfyroll_CustomNodes": "d78b780ae43fcf8c6b7c6505e6ffb4584281ceca",
       "ComfyUI_essentials": "33ff89fd354d8ec3ab6affb605a79a931b445d99",
-      "ComfyUI_Comfyroll_CustomNodes": "d78b780ae43fcf8c6b7c6505e6ffb4584281ceca"
+      "ComfyUI-Easy-Use": "aadbb0b38945eba3e15be6099a7f4e5c0327c175",
+      "ComfyUI-Custom-Scripts": "bbda5e52ad580c13ceaa53136d9c2bed9137bd2e"
     },
     "VHS_latentpreview": false,
     "VHS_latentpreviewrate": 0,
