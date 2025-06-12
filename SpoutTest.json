@@ -1,8 +1,8 @@
 {
   "id": "4bd7786f-cb6e-484f-a248-d2a18ac2d009",
   "revision": 0,
-  "last_node_id": 19,
-  "last_link_id": 19,
+  "last_node_id": 22,
+  "last_link_id": 22,
   "nodes": [
     {
       "id": 6,
@@ -16,7 +16,7 @@
         26
       ],
       "flags": {},
-      "order": 12,
+      "order": 13,
       "mode": 0,
       "inputs": [
         {
@@ -53,7 +53,7 @@
         246
       ],
       "flags": {},
-      "order": 14,
+      "order": 15,
       "mode": 0,
       "inputs": [
         {
@@ -81,7 +81,7 @@
         246
       ],
       "flags": {},
-      "order": 11,
+      "order": 12,
       "mode": 0,
       "inputs": [
         {
@@ -187,7 +187,7 @@
         46
       ],
       "flags": {},
-      "order": 10,
+      "order": 14,
       "mode": 0,
       "inputs": [
         {
@@ -250,37 +250,6 @@
       ]
     },
     {
-      "id": 1,
-      "type": "SPOUT WRITER (JOV_SPOUT)",
-      "pos": [
-        597.7999877929688,
-        441
-      ],
-      "size": [
-        303.6861267089844,
-        82
-      ],
-      "flags": {},
-      "order": 13,
-      "mode": 0,
-      "inputs": [
-        {
-          "label": "image",
-          "name": "image",
-          "type": "IMAGE,MASK",
-          "link": 12
-        }
-      ],
-      "outputs": [],
-      "properties": {
-        "Node name for S&R": "SPOUT WRITER (JOV_SPOUT)"
-      },
-      "widgets_values": [
-        "Spout Sender",
-        30
-      ]
-    },
-    {
       "id": 11,
       "type": "DualCLIPLoader",
       "pos": [
@@ -316,77 +285,6 @@
       ]
     },
     {
-      "id": 10,
-      "type": "FluxSamplerParams+",
-      "pos": [
-        -126.78853607177734,
-        138.92111206054688
-      ],
-      "size": [
-        281.7290954589844,
-        286
-      ],
-      "flags": {},
-      "order": 8,
-      "mode": 0,
-      "inputs": [
-        {
-          "label": "model",
-          "name": "model",
-          "type": "MODEL",
-          "link": 6
-        },
-        {
-          "label": "conditioning",
-          "name": "conditioning",
-          "type": "CONDITIONING",
-          "link": 8
-        },
-        {
-          "label": "latent_image",
-          "name": "latent_image",
-          "type": "LATENT",
-          "link": 9
-        },
-        {
-          "label": "loras",
-          "name": "loras",
-          "shape": 7,
-          "type": "LORA_PARAMS",
-          "link": null
-        }
-      ],
-      "outputs": [
-        {
-          "label": "latent",
-          "name": "latent",
-          "type": "LATENT",
-          "links": [
-            10
-          ]
-        },
-        {
-          "label": "params",
-          "name": "params",
-          "type": "SAMPLER_PARAMS",
-          "links": null
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "FluxSamplerParams+"
-      },
-      "widgets_values": [
-        "?",
-        "euler",
-        "simple",
-        "20",
-        "3.5",
-        "",
-        "",
-        "1.0"
-      ]
-    },
-    {
       "id": 12,
       "type": "CLIPTextEncode",
       "pos": [
@@ -398,7 +296,7 @@
         200
       ],
       "flags": {},
-      "order": 6,
+      "order": 7,
       "mode": 0,
       "inputs": [
         {
@@ -441,7 +339,7 @@
         242
       ],
       "flags": {},
-      "order": 9,
+      "order": 10,
       "mode": 0,
       "inputs": [
         {
@@ -492,39 +390,6 @@
       ]
     },
     {
-      "id": 16,
-      "type": "PrimitiveInt",
-      "pos": [
-        -698.5858154296875,
-        880.7538452148438
-      ],
-      "size": [
-        270,
-        82
-      ],
-      "flags": {},
-      "order": 4,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "label": "INT",
-          "name": "INT",
-          "type": "INT",
-          "links": [
-            15
-          ]
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "PrimitiveInt"
-      },
-      "widgets_values": [
-        844,
-        "increment"
-      ]
-    },
-    {
       "id": 19,
       "type": "PrimitiveInt",
       "pos": [
@@ -536,7 +401,7 @@
         82
       ],
       "flags": {},
-      "order": 5,
+      "order": 4,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -553,7 +418,7 @@
         "Node name for S&R": "PrimitiveInt"
       },
       "widgets_values": [
-        76,
+        79,
         "increment"
       ]
     },
@@ -569,7 +434,7 @@
         106
       ],
       "flags": {},
-      "order": 7,
+      "order": 8,
       "mode": 0,
       "inputs": [
         {
@@ -606,6 +471,223 @@
         0,
         1,
         "add"
+      ]
+    },
+    {
+      "id": 1,
+      "type": "SPOUT WRITER (JOV_SPOUT)",
+      "pos": [
+        597.7999877929688,
+        441
+      ],
+      "size": [
+        303.6861267089844,
+        82
+      ],
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "image",
+          "name": "image",
+          "type": "IMAGE,MASK",
+          "link": 12
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "SPOUT WRITER (JOV_SPOUT)"
+      },
+      "widgets_values": [
+        "Comfy Spout Sender",
+        30
+      ]
+    },
+    {
+      "id": 10,
+      "type": "FluxSamplerParams+",
+      "pos": [
+        -126.78853607177734,
+        138.92111206054688
+      ],
+      "size": [
+        281.7290954589844,
+        286
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "model",
+          "name": "model",
+          "type": "MODEL",
+          "link": 6
+        },
+        {
+          "label": "conditioning",
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 8
+        },
+        {
+          "label": "latent_image",
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 9
+        },
+        {
+          "label": "loras",
+          "name": "loras",
+          "shape": 7,
+          "type": "LORA_PARAMS",
+          "link": null
+        },
+        {
+          "label": "seed",
+          "name": "seed",
+          "type": "STRING",
+          "widget": {
+            "name": "seed"
+          },
+          "link": 21
+        }
+      ],
+      "outputs": [
+        {
+          "label": "latent",
+          "name": "latent",
+          "type": "LATENT",
+          "links": [
+            10
+          ]
+        },
+        {
+          "label": "params",
+          "name": "params",
+          "type": "SAMPLER_PARAMS",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "FluxSamplerParams+"
+      },
+      "widgets_values": [
+        "?",
+        "euler",
+        "simple",
+        "20",
+        "3.5",
+        "",
+        "",
+        "1.0"
+      ]
+    },
+    {
+      "id": 22,
+      "type": "CR Integer To String",
+      "pos": [
+        -491.19500732421875,
+        30.733684539794922
+      ],
+      "size": [
+        140,
+        46
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "int_",
+          "type": "INT",
+          "link": 22
+        }
+      ],
+      "outputs": [
+        {
+          "label": "字符串",
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            21
+          ]
+        },
+        {
+          "name": "show_help",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CR Integer To String"
+      }
+    },
+    {
+      "id": 16,
+      "type": "PrimitiveInt",
+      "pos": [
+        -698.5858154296875,
+        880.7538452148438
+      ],
+      "size": [
+        270,
+        82
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "label": "INT",
+          "name": "INT",
+          "type": "INT",
+          "links": [
+            15
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PrimitiveInt"
+      },
+      "widgets_values": [
+        847,
+        "increment"
+      ]
+    },
+    {
+      "id": 20,
+      "type": "PrimitiveInt",
+      "pos": [
+        -923.7334594726562,
+        215.3702392578125
+      ],
+      "size": [
+        270,
+        82
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "label": "INT",
+          "name": "INT",
+          "type": "INT",
+          "links": [
+            22
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PrimitiveInt"
+      },
+      "widgets_values": [
+        -660676418508127,
+        "fixed"
       ]
     }
   ],
@@ -713,17 +795,48 @@
       3,
       0,
       "INT"
+    ],
+    [
+      21,
+      22,
+      0,
+      10,
+      4,
+      "STRING"
+    ],
+    [
+      22,
+      20,
+      0,
+      22,
+      0,
+      "INT"
     ]
   ],
-  "groups": [],
+  "groups": [
+    {
+      "id": 1,
+      "title": "StreamAutomator",
+      "bounding": [
+        -708.5858154296875,
+        778.3665161132812,
+        686.1679077148438,
+        358.8852233886719
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    }
+  ],
   "config": {},
   "extra": {
     "frontendVersion": "1.18.9",
     "node_versions": {
       "comfy-core": "0.3.33",
       "jovi_spout": "70135673bf64b2a7678a2520c2fdd637adb03deb",
+      "ComfyUI-Easy-Use": "aadbb0b38945eba3e15be6099a7f4e5c0327c175",
       "ComfyUI_essentials": "33ff89fd354d8ec3ab6affb605a79a931b445d99",
-      "ComfyUI-Easy-Use": "aadbb0b38945eba3e15be6099a7f4e5c0327c175"
+      "ComfyUI_Comfyroll_CustomNodes": "d78b780ae43fcf8c6b7c6505e6ffb4584281ceca"
     },
     "VHS_latentpreview": false,
     "VHS_latentpreviewrate": 0,
