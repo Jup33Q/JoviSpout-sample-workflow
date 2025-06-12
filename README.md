@@ -16,3 +16,5 @@ I provided a .toe sample flie worked on touchdesigner, you may use OBS spout plu
 ![屏幕截图 2025-06-12 104201](https://github.com/user-attachments/assets/13f2a044-37d3-4619-b4c6-21440f1668ae)
 
 
+## Jovi Spout ComfyUI Node:
+https://github.com/Amorano/Jovi_Spout
